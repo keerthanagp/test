@@ -1,0 +1,71 @@
+create table movies(
+name varchar(50) PRIMARY KEY,
+image varchar(20),
+vedio varchar(20),
+ artist_id int,
+ review_id int
+);
+select * from movies
+
+insert into movies
+values
+('vijay','url1234', 'vedio1', 001, 01),
+('Ajith','url5678', 'vedio2', 002, 02),
+('Surya','url9123', 'vedio3', 003, 03);
+
+select * from movies
+
+
+
+
+
+create table artist(
+name varchar(50) PRIMARY KEY,
+ movie_id int
+);
+select * from artist
+
+insert into artist
+values
+('vijay',101),
+('Ajith',102),
+('Surya',103);
+
+select * from artist
+
+
+
+
+
+
+create table review(
+name varchar(50) PRIMARY KEY,
+ movie_id int,
+ review_id int
+);
+select * from review
+
+insert into review
+values
+('vijay',101, 01),
+('Ajith',102, 02),
+('Surya',103, 03);
+
+select * from review
+
+
+
+//select query:
+
+select * 
+from movies inner join artist
+on movies.name = artist.name;
+
+
+//output will be:
+
+name    image     vedio     artist_id  review_id  name  movie_id
+Ajith	url5678	  vedio2	 2	  2      Ajith   102
+Surya	url9123	  vedio3	 3	  3	 Surya	 103
+vijay	url1234	  vedio1	 1	  1	 vijay	 101
+
